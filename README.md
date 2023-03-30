@@ -153,7 +153,7 @@ Any query parameters other then the keywords _fields_, _omit_, _sort_, _offset_,
 * Values that are [dates](http://www.w3.org/TR/NOTE-datetime) are compared as dates (except for YYYY which matches the number rule).
 * Multiple equals comparisons are merged into a `$in` operator. For example, `id=a&id=b` yields `{id:{$in:['a','b']}}`.
 * Multiple not-equals comparisons are merged into a `$nin` operator. For example, `id!=a&id!=b` yields `{id:{$nin:['a','b']}}`.
-* Comma separated values in equals or not-equals yeild an `$in` or `$nin` operator. For example, `id=a,b` yields `{id:{$in:['a','b']}}`.
+* Comma separated values in equals or not-equals yield an `$in` or `$nin` operator. For example, `id=a,b` yields `{id:{$in:['a','b']}}`.
 * Regex patterns. For example, `name=/^john/i` yields `{id: /^john/i}`.
 * Parameters without a value check that the field is present. For example, `foo&bar=10` yields `{foo: {$exists: true}, bar: 10}`.
 * Parameters prefixed with a _not_ (!) and without a value check that the field is not present. For example, `!foo&bar=10` yields `{foo: {$exists: false}, bar: 10}`.

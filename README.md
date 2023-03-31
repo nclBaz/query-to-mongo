@@ -30,7 +30,7 @@ collection.find(query.criteria, query.options).toArray(function(err, results) {
 })
 ```
 
-As of version 0.8.0, comparision operators that are encoded into the value are also considered. For example, a query sucha as: `name=john&age=%3E21` becomes the following hash:
+As of version 0.8.0, comparison operators that are encoded into the value are also considered. For example, a query sucha as: `name=john&age=%3E21` becomes the following hash:
 
 ```javascript
 {
@@ -157,7 +157,7 @@ Any query parameters other then the keywords _fields_, _omit_, _sort_, _offset_,
 * Regex patterns. For example, `name=/^john/i` yields `{id: /^john/i}`.
 * Parameters without a value check that the field is present. For example, `foo&bar=10` yields `{foo: {$exists: true}, bar: 10}`.
 * Parameters prefixed with a _not_ (!) and without a value check that the field is not present. For example, `!foo&bar=10` yields `{foo: {$exists: false}, bar: 10}`.
-* Supports some of the named comparision operators ($type, $size and $all).  For example, `foo:type=string`, yields `{ foo: {$type: 'string} }`.
+* Supports some of the named comparison operators ($type, $size and $all).  For example, `foo:type=string`, yields `{ foo: {$type: 'string} }`.
 * Support for forced string comparison; value in single or double quotes (`field='10'` or `field="10"`) would force a string compare. Allows for string with embedded comma (`field="a,b"`) and quotes (`field="that's all folks"`).
 
 ### A note on embedded documents
@@ -201,8 +201,8 @@ npm test
 ## Todo
 * Geospatial search
 * $text searches
-* $mod comparision
-* Bitwise comparisions
+* $mod comparison
+* Bitwise comparisons
 * Escaping or double quoting in forced string comparison, ='That\'s all folks' or ='That''s all folks'
 
 Creating a Release
